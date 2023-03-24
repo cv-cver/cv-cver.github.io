@@ -1,4 +1,140 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 剑庐</title><link>https://cv-cver.github.io/post/</link><description>Recent content in Posts on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 20 Mar 2023 10:23:17 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>新的感悟</title><link>https://cv-cver.github.io/p/%E6%96%B0%E7%9A%84%E6%84%9F%E6%82%9F/</link><pubDate>Mon, 20 Mar 2023 10:23:17 +0800</pubDate><guid>https://cv-cver.github.io/p/%E6%96%B0%E7%9A%84%E6%84%9F%E6%82%9F/</guid><description>&lt;img src="https://cv-cver.github.io/img/2.jpg" alt="Featured image of post 新的感悟" />&lt;p>本博客用于记录本人工作、学习，生活日常，长路漫漫，且行且珍惜~&lt;/p></description></item><item><title>本地更改更新至GitHub</title><link>https://cv-cver.github.io/p/%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9%E6%9B%B4%E6%96%B0%E8%87%B3github/</link><pubDate>Sun, 19 Mar 2023 23:51:41 +0800</pubDate><guid>https://cv-cver.github.io/p/%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9%E6%9B%B4%E6%96%B0%E8%87%B3github/</guid><description>&lt;p>step1&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 剑庐</title><link>https://cv-cver.github.io/post/</link><description>Recent content in Posts on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 23:22:04 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Yolov5</title><link>https://cv-cver.github.io/p/yolov5/</link><pubDate>Fri, 24 Mar 2023 23:22:04 +0800</pubDate><guid>https://cv-cver.github.io/p/yolov5/</guid><description>&lt;img src="https://cv-cver.github.io/img/2.jpg" alt="Featured image of post Yolov5" />&lt;h1 id="yolov5">YOLOv5&lt;/h1>
+&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>Yolov5是一种快速、准确的目标检测算法，它将目标检测任务看作一个&lt;em>回归问题&lt;/em>。在输入图像的情况下，YOLOv5使用卷积神经网络直接预测图像中的目标的边界框和类别信息。&lt;/p>
+&lt;p>YOLOv5具有很高的检测速度和准确率，并且可以进行实时目标检测。此外，YOLOv5还支持多种检测精度和速度设置，可以根据具体应用场景选择不同的模型结构。与此同时，YOLOv5也具有很高的可定制性，可以通过在不同数据集和应用需求下进行修改和扩展，以达到更好的性能。&lt;/p>
+&lt;h2 id="网络结构">网络结构&lt;/h2>
+&lt;p>YOLOv5的网络结构可以分为两个部分，即主干网络和检测头。&lt;/p>
+&lt;p>主干网络采用CSPNet（Cross Stage Partial Network）结构，主要由一系列CSP块组成。每个CSP块包含多个卷积层和残差连接。具体来说，每个CSP块首先将输入特征图分成两个路径，一条路径进行卷积计算，另一条路径直接输出。两个路径的特征图在最后通过残差连接进行合并。这种结构可以加快特征提取速度，同时提高准确性。&lt;/p>
+&lt;p>检测头由多个卷积层和全连接层组成，其输出包括目标的坐标和类别信息。YOLOv5将检测头输出的特征图划分为网格，每个网格预测若干个目标，每个目标由包含目标中心点的网格、目标边界框偏移量、目标得分和目标类别组成。此外，YOLOv5还引入了自注意力机制，以进一步提高检测准确性。自注意力机制允许网络自动关注输入中的相关区域，从而增强目标检测的能力。&lt;/p>
+&lt;p>总体来说，YOLOv5的网络结构相对简单，但它在卷积神经网络、残差连接和注意力机制方面进行了优化，使得其具有很高的检测速度和准确率，并且可以进行实时目标检测。此外，YOLOv5还支持多种检测精度和速度设置，可以根据具体应用场景选择不同的模型结构。&lt;/p>
+&lt;h2 id="代码组成">代码组成&lt;/h2>
+&lt;p>YOLOv5的代码主要由以下几个部分组成：&lt;/p>
+&lt;p>1.models文件夹：包含YOLOv5模型的主干网络和检测头的定义，其中主干网络定义在csp.py中，检测头定义在yolo.py中。&lt;/p>
+&lt;p>2.utils文件夹：包含与YOLOv5相关的各种工具函数和工具类，如数据加载器、预处理器、数据增强器、NMS处理、锚框计算等等。&lt;/p>
+&lt;p>3.train.py：训练YOLOv5模型的代码，包括定义训练流程、设置超参数、加载数据集、构建模型、优化器、损失函数等等。&lt;/p>
+&lt;p>4.detect.py：对图像或视频进行目标检测的代码，可以将预测结果保存到指定的输出文件中。&lt;/p>
+&lt;p>5.test.py：对测试集进行目标检测的代码，用于评估模型的性能。&lt;/p>
+&lt;p>6.hubconf.py：用于实现模型的导出和使用，方便其他开发者和应用程序调用YOLOv5模型。&lt;/p>
+&lt;p>7.requirements.txt：列出YOLOv5所依赖的Python库和版本，方便用户安装和使用。&lt;/p>
+&lt;p>YOLOv5的代码采用了PyTorch框架，易于使用GPU加速，可以大大提高训练和推理速度。&lt;/p>
+&lt;h2 id="yolov5剪枝">Yolov5剪枝&lt;/h2>
+&lt;p>YOLOv5可以使用剪枝技术来减小模型的尺寸，以减少计算量和内存占用，提高模型的推理速度。下面以YOLOv5s为例，介绍如何对网络结构进行剪枝。&lt;/p>
+&lt;p>首先，我们需要安装pytorch-pruning库，该库提供了对PyTorch模型进行剪枝的工具。在安装好pytorch-pruning库之后，我们需要在YOLOv5s模型中添加一个剪枝层，用于剪枝CSP网络和检测头中的卷积层。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl"> import torch.nn as nn
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import torch.nn.utils.prune as prune
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> class PruningModule(nn.Module):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> def __init__(self, module):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> super(PruningModule, self).__init__()
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> self.module = module
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> def forward(self, x):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> return self.module(x)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> def apply_pruning(module):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> PruningModule(module)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> for name, child in module.named_children():
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> apply_pruning(child)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> def prune_model(model):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> for name, module in model.named_modules():
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> if isinstance(module, nn.Conv2d):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> prune.l1_unstructured(module, name=&amp;#39;weight&amp;#39;, amount=0.3)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在这里，我们定义了一个PruningModule类，该类用于包装我们要剪枝的模块，并定义了apply_pruning函数和prune_model函数，用于遍历模型并对卷积层进行剪枝。&lt;/p>
+&lt;p>接下来，我们可以在train.py中进行如下修改，以使用上述剪枝代码：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl"> from models.yolo import Model
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from utils.general import init_seeds
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from utils.torch_utils import model_info
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> from utils.datasets import create_dataloader
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import argparse
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> import torch.nn.utils.prune as prune
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> if __name__ == &amp;#39;__main__&amp;#39;:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser = argparse.ArgumentParser()
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--data&amp;#39;, type=str, default=&amp;#39;data/coco.yaml&amp;#39;, help=&amp;#39;dataset.yaml path&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--cfg&amp;#39;, type=str, default=&amp;#39;models/yolov5s.yaml&amp;#39;, help=&amp;#39;model.yaml path&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--weights&amp;#39;, type=str, default=&amp;#39;weights/yolov5s.pt&amp;#39;, help=&amp;#39;initial weights path&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--batch-size&amp;#39;, type=int, default=16, help=&amp;#39;batch size&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--epochs&amp;#39;, type=int, default=300, help=&amp;#39;number of epochs&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--device&amp;#39;, default=&amp;#39;&amp;#39;, help=&amp;#39;cuda device, i.e. 0 or 0,1,2,3 or cpu&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--multi-scale&amp;#39;, action=&amp;#39;store_true&amp;#39;, help=&amp;#39;adjust (67%% - 150%%) img_size every 10 batches&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--img-size&amp;#39;, nargs=&amp;#39;+&amp;#39;, type=int, default=[640, 640], help=&amp;#39;[train, test] img sizes&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--rect&amp;#39;, action=&amp;#39;store_true&amp;#39;, help=&amp;#39;rectangular training&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> parser.add_argument(&amp;#39;--resume&amp;#39;, nargs=&amp;#39;?&amp;#39;, const=True, default=False, help=&amp;#39;resume most recent training&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> opt = parser.parse_args()
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> # 定义模型
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> model = Model(opt.cfg).to(opt.device)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> # 对模型进行剪枝
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> apply_pruning(model)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> prune_model(model)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> # 输出剪枝后的模型结构信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> model_info(model)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>新的感悟</title><link>https://cv-cver.github.io/p/%E6%96%B0%E7%9A%84%E6%84%9F%E6%82%9F/</link><pubDate>Mon, 20 Mar 2023 10:23:17 +0800</pubDate><guid>https://cv-cver.github.io/p/%E6%96%B0%E7%9A%84%E6%84%9F%E6%82%9F/</guid><description>&lt;img src="https://cv-cver.github.io/img/2.jpg" alt="Featured image of post 新的感悟" />&lt;p>本博客用于记录本人工作、学习，生活日常，长路漫漫，且行且珍惜~&lt;/p></description></item><item><title>本地更改更新至GitHub</title><link>https://cv-cver.github.io/p/%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9%E6%9B%B4%E6%96%B0%E8%87%B3github/</link><pubDate>Sun, 19 Mar 2023 23:51:41 +0800</pubDate><guid>https://cv-cver.github.io/p/%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9%E6%9B%B4%E6%96%B0%E8%87%B3github/</guid><description>&lt;p>step1&lt;/p>
 &lt;pre>&lt;code>hugo --minify
 &lt;/code>&lt;/pre>
 &lt;p>step2&lt;/p>
