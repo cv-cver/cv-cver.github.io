@@ -1,4 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 剑庐</title><link>https://cv-cver.github.io/post/</link><description>Recent content in Posts on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 23:22:04 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Yolov5</title><link>https://cv-cver.github.io/p/yolov5/</link><pubDate>Fri, 24 Mar 2023 23:22:04 +0800</pubDate><guid>https://cv-cver.github.io/p/yolov5/</guid><description>&lt;img src="https://cv-cver.github.io/img/2.jpg" alt="Featured image of post Yolov5" />&lt;h1 id="yolov5">YOLOv5&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 剑庐</title><link>https://cv-cver.github.io/post/</link><description>Recent content in Posts on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 13:55:49 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>JupyterLab 安装及配置</title><link>https://cv-cver.github.io/p/jupyterlab-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</link><pubDate>Mon, 27 Mar 2023 13:55:49 +0800</pubDate><guid>https://cv-cver.github.io/p/jupyterlab-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</guid><description>&lt;img src="https://cv-cver.github.io/img/5.jpg" alt="Featured image of post JupyterLab 安装及配置" />&lt;h1 id="jupyterlab-安装及配置">jupyterlab 安装及配置&lt;/h1>
+&lt;h2 id="安装miniconda">安装miniconda&lt;/h2>
+&lt;p>&lt;a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener"
+>清华源&lt;/a> miniconda 下载对应版本&lt;/p>
+&lt;h2 id="配置miniconda">配置miniconda&lt;/h2>
+&lt;p>conda下载源配置，参考&lt;a class="link" href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/" target="_blank" rel="noopener"
+>清华源&lt;/a>&lt;/p>
+&lt;p>pip 下载源，升级pip并配置清华源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="安装jupyterlab">安装JupyterLab&lt;/h2>
+&lt;p>建议安装在base环境下，方便使用和设置开机自启。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">pip install jupyterLab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置jupyterlab">配置jupyterlab&lt;/h2>
+&lt;p>jupyter-lab -h 可以查看jupyterlab的配置选项&lt;/p>
+&lt;p>使用以下命令生成配置文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">jupyter-lab --generate-config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>该文件位于用户目录下，windows的路径为&lt;/p>
+&lt;pre>&lt;code>C:\Users\你的用户名\.jupyter\jupyter_lab_config.py
+&lt;/code>&lt;/pre>
+&lt;p>Ubuntu的路径为&lt;/p>
+&lt;pre>&lt;code>/home/user/.jupyter/jupyter_lab_config.py
+&lt;/code>&lt;/pre>
+&lt;p>接下来填写以下配置参数，复制如下代码到配置文件的开头即可&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">c.ServerApp.ip = &amp;#39;*&amp;#39; # 允许任何ip访问
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">c.ServerApp.port = 8888 # 启动的端口号
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">c.ServerApp.open_browser = False # 启动但不打开浏览器
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">c.ServerApp.root_dir = &amp;#39;/xxxx/xxxx/xxx&amp;#39; # 启动后的工作路径
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">c.ServerApp.password_required = True # 是否密码验证
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>更改后保存配置文件，接下来配置jupyterlab的密码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">jupyter-lab password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置密码后，进入需要验证密码，忘记密码重新设置即可&lt;/p>
+&lt;h2 id="设置jupyterlab开机自启动">设置jupyterlab开机自启动&lt;/h2>
+&lt;ol>
+&lt;li>Windows环境下
+1.1 创建jupyterlab.txt&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">&lt;span class="gu">@echo off
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span>jupyter-lab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>注意，这里要求进入dos环境输入jupyter-lab回车能进入jupyterlab，否则无法自启！如果不能进入，尝试&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">conda init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>保存并更改文件后缀，jupyterlab.txt &amp;ndash;&amp;gt; jupyterlab.bat
+打开此文件，jupyterlab自启则这一步配置成功&lt;/p>
+&lt;p>1.2 创建jupyterlab.vbs&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">set ws=createobject(&amp;#34;wscript.shell&amp;#34;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ws.run &amp;#34;path\to\jupyterlab.bat&amp;#34;,0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再将jupyterlab.vbs放在windows开机启动目录下即可，下次开机可以直接访问。&lt;/p>
+&lt;ol start="2">
+&lt;li>Ubuntu环境下
+2.1 创建jupyterlab.server&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">sudo vim /etc/systemd/system/jupyter.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>2.2 添加如下代码：其中user为用户名&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">[Unit]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Description=jupyter
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">After=network.target
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[Service]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Type=simple
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Restart=on-failure
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RestartSec=5s
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ExecStart=/home/user/miniconda3/bin/jupyter-lab # path of jupyter-lab
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">WorkingDirectory=/home/user
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">User=user
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[Install]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">WantedBy=multi-user.target
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>2.3 设置开机自启、启动&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">sudo systemctl enable jupyter （开机自启动）
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start jupyter （启动）
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Yolov5</title><link>https://cv-cver.github.io/p/yolov5/</link><pubDate>Fri, 24 Mar 2023 23:22:04 +0800</pubDate><guid>https://cv-cver.github.io/p/yolov5/</guid><description>&lt;img src="https://cv-cver.github.io/img/3.jpg" alt="Featured image of post Yolov5" />&lt;h1 id="yolov5">YOLOv5&lt;/h1>
 &lt;h2 id="简介">简介&lt;/h2>
 &lt;p>Yolov5是一种快速、准确的目标检测算法，它将目标检测任务看作一个&lt;em>回归问题&lt;/em>。在输入图像的情况下，YOLOv5使用卷积神经网络直接预测图像中的目标的边界框和类别信息。&lt;/p>
 &lt;p>YOLOv5具有很高的检测速度和准确率，并且可以进行实时目标检测。此外，YOLOv5还支持多种检测精度和速度设置，可以根据具体应用场景选择不同的模型结构。与此同时，YOLOv5也具有很高的可定制性，可以通过在不同数据集和应用需求下进行修改和扩展，以达到更好的性能。&lt;/p>
