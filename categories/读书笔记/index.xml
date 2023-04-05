@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>读书笔记 on 剑庐</title><link>https://cv-cver.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link><description>Recent content in 读书笔记 on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 05 Apr 2023 23:59:10 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>CSAPP</title><link>https://cv-cver.github.io/p/csapp/</link><pubDate>Wed, 05 Apr 2023 23:59:10 +0800</pubDate><guid>https://cv-cver.github.io/p/csapp/</guid><description>&lt;img src="https://cv-cver.github.io/img/7.jpg" alt="Featured image of post CSAPP" />&lt;h2 id="计算机系统漫游">计算机系统漫游&lt;/h2>
+&lt;h2 id="信息的表示和处理">信息的表示和处理&lt;/h2>
+&lt;h3 id="信息存储">信息存储&lt;/h3>
+&lt;h4 id="十六进制表示法">十六进制表示法&lt;/h4>
+&lt;p>0x开头，0~9，A(a)~F(f)&lt;/p>
+&lt;p>十六进制转二进制：
+每个数字转化为二进制从左到右连一起即可，反之，二进制转十六进制亦然&lt;/p>
+&lt;h4 id="字数据大小">字数据大小&lt;/h4>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>C声明&lt;/th>
+&lt;th>字节数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>有符号&lt;/td>
+&lt;td>无符号&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>单元格&lt;/td>
+&lt;td>单元格&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>单元格&lt;/td>
+&lt;td>单元格&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="寻址和字节顺序">寻址和字节顺序&lt;/h4>
+&lt;p>对象的地址为所使用字节中最小的地址&lt;/p>
+&lt;p>小端法：最低有效字节在最前面&lt;/p>
+&lt;p>大端法：最高效字节放在最前面&lt;/p>
+&lt;h4 id="表述字符串">表述字符串&lt;/h4>
+&lt;h4 id="表示代码">表示代码&lt;/h4>
+&lt;p>二进制代码很少能在不同机器和操作系统组合之间移植&lt;/p>
+&lt;h4 id="布尔代数简介">布尔代数简介&lt;/h4>
+&lt;p>布尔运算 ~ 对应 逻辑运算 NOT&lt;/p>
+&lt;p>布尔运算 | 对应 逻辑运算 OR&lt;/p>
+&lt;p>布尔运算 &amp;amp; 对应 逻辑运算 AND&lt;/p>
+&lt;p>布尔运算 ^ 对应 逻辑运算 异或&lt;/p>
+&lt;h4 id="c语言中的位级运算">C语言中的位级运算&lt;/h4>
+&lt;p>确定一个位级表达式的结果最好方法是将十六进制的参数拓展成二进制表示并执行二进制运算，最后再转换回十六进制。&lt;/p>
+&lt;h4 id="c语言中的逻辑运算">C语言中的逻辑运算&lt;/h4>
+&lt;p>|| &amp;ndash;&amp;gt; OR&lt;/p>
+&lt;p>&amp;amp;&amp;amp; &amp;ndash;&amp;gt; AND&lt;/p>
+&lt;p>！ &amp;ndash;&amp;gt; NOT&lt;/p>
+&lt;h4 id="c语言中的位移运算">C语言中的位移运算&lt;/h4>
+&lt;p>左移运算：x &amp;gt; &amp;gt; k 左移补k个0&lt;/p>
+&lt;p>右移运算：x &amp;lt; &amp;lt; k&lt;/p>
+&lt;ol>
+&lt;li>逻辑左移：无符号数使用，右移补k个0&lt;/li>
+&lt;li>算术左移：有符号数使用，右移补k个最高有效位的值（0/1）&lt;/li>
+&lt;/ol></description></item></channel></rss>

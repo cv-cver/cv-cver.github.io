@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on 剑庐</title><link>https://cv-cver.github.io/categories/%E7%AE%97%E6%B3%95/</link><description>Recent content in 算法 on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 23:22:04 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>Yolov5</title><link>https://cv-cver.github.io/p/yolov5/</link><pubDate>Fri, 24 Mar 2023 23:22:04 +0800</pubDate><guid>https://cv-cver.github.io/p/yolov5/</guid><description>&lt;img src="https://cv-cver.github.io/img/3.jpg" alt="Featured image of post Yolov5" />&lt;h1 id="yolov5">YOLOv5&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>算法 on 剑庐</title><link>https://cv-cver.github.io/categories/%E7%AE%97%E6%B3%95/</link><description>Recent content in 算法 on 剑庐</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 28 Mar 2023 22:29:23 +0800</lastBuildDate><atom:link href="https://cv-cver.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml"/><item><title>深度学习基础知识汇总</title><link>https://cv-cver.github.io/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</link><pubDate>Tue, 28 Mar 2023 22:29:23 +0800</pubDate><guid>https://cv-cver.github.io/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</guid><description>&lt;img src="https://cv-cver.github.io/img/10.jpg" alt="Featured image of post 深度学习基础知识汇总" />&lt;p>以下内容来源于嵌入式视觉(公众号) ，作者嵌入式视觉&lt;/p>
+&lt;h2 id="滤波器与卷积核">滤波器与卷积核&lt;/h2>
+&lt;p>在只有一个通道的情况下，“卷积核”（&amp;lsquo;kernel&amp;rsquo;）就相当于滤波器（&amp;lsquo;filter&amp;rsquo;），这两个概念是可以互换的。一个 “Kernel” 更倾向于是 2D 的权重矩阵。而 “filter” 则是指多个 kernel 堆叠的 3D 结构。如果是一个 2D 的 filter，那么两者就是一样的。但是一个3D filter，在大多数深度学习的卷积中，它是包含 kernel 的。每个卷积核都是独一无二的，主要在于强调输入通道的不同方面。&lt;/p>
+&lt;h2 id="卷积层和池化输出大小计算">卷积层和池化输出大小计算&lt;/h2>
+&lt;p>不管是 TensorFlow、Keras、Caffe 还是 Pytorch，其卷积层和池化层的参数默认值可能有所不同，但是最终的卷积输出大小计算公式是一样的。&lt;/p>
+&lt;h3 id="cnn-中术语解释">CNN 中术语解释&lt;/h3>
+&lt;p>卷积层主要参数有下面这么几个：&lt;/p>
+&lt;ul>
+&lt;li>卷积核 Kernal 大小（在 Tensorflow/keras 框架中也称为filter）；&lt;/li>
+&lt;li>填充 Padding ；&lt;/li>
+&lt;li>滑动步长 Stride；&lt;/li>
+&lt;li>输出通道数 Channels。&lt;/li>
+&lt;/ul>
+&lt;h3 id="卷积输出大小计算简化型">卷积输出大小计算（简化型）&lt;/h3>
+&lt;p>1，在 Pytorch 框架中，图片（feature map）经卷积 Conv2D 后输出大小计算公式如下：&lt;/p>
+&lt;p>，其中 是向下取整符号，用于结果不是整数时进行向下取整（Pytorch 的 Conv2d 卷积函数的默认参数 ceil_mode = False，即默认向下取整, dilation = 1）。&lt;/p>
+&lt;p>输入图片大小 W×W（默认输入尺寸为正方形）
+Filter 大小 F×F
+步长 S
+padding的像素数 P
+输出特征图大小 N×N
+2，特征图经反卷积（也叫转置卷积） keras-Conv2DTranspose（pytorch-ConvTranspose2d） 后得到的特征图大小计算方式：，还有另外一个写法：，可由卷积输出大小计算公式反推得到。 是输入大小， 是卷积核大小， 是滑动步长， padding 的像素数 ， 是输出大小。&lt;/p>
+&lt;p>反卷积也称为转置卷积，一般主要用来还原 feature map 的尺寸大小，在 cnn 可视化，fcn 中达到 pixel classification，以及 gan 中从特征生成图像都需要用到反卷积的操作。反卷积输出结果计算实例。例如，输入：2x2， 卷积核大小：4x4， 滑动步长：3，填充像素为 0， 输出：7x7 ，其计算过程就是， (2 - 1) * 3 + 4 = 7。&lt;/p>
+&lt;p>3，池化层如果设置为不填充像素（对于 Pytorch，设置参数padding = 0，对于 Keras/TensorFlow，设置参数padding=&amp;ldquo;valid&amp;rdquo;），池化得到的特征图大小计算方式: ，这里公式表示的是除法结果向下取整再加 1。&lt;/p>
+&lt;p>总结：对于Pytorch 和 tensorflow 的卷积和池化函数，卷积函数 padding 参数值默认为 0/&amp;ldquo;valid&amp;rdquo;（即不填充），但在实际设计的卷积神经网络中，卷积层一般会填充像素(same)，池化层一般不填充像素(valid)，输出 shape 计算是向下取整。注意：当 stride为 1 的时候，kernel为 3、padding为 1 或者 kernel为 5、padding为 2，这两种情况可直接得出卷积前后特征图尺寸不变。&lt;/p>
+&lt;p>注意不同的深度学习框架，卷积/池化函数的输出 shape 计算会有和上述公式有所不同，我给出的公式是简化版，适合面试题计算，实际框架的计算比这复杂，因为参数更多。&lt;/p>
+&lt;h3 id="理解边界效应与填充-padding">理解边界效应与填充 padding&lt;/h3>
+&lt;p>如果希望输出特征图的空间维度Keras/TensorFlow 设置卷积层的过程中可以设置 padding 参数值为 “valid” 或 “same”。“valid” 代表只进行有效的卷积，对边界数据不处理。“same” 代表 TensorFlow 会自动对原图像进行补零（表示卷积核可以停留在图像边缘），也就是自动设置 padding 值让输出与输入形状相同。&lt;/p>
+&lt;p>参考资料
+CNN中的参数解释及计算[1]
+CNN基础知识——卷积（Convolution）、填充（Padding）、步长(Stride)[2]
+三，深度学习框架的张量形状格式
+图像张量的形状有两种约定，通道在前（channel-first）和通道在后（channel-last）的约定，常用深度学习框架使用的数据张量形状总结如下：&lt;/p>
+&lt;p>Pytorch/Caffe: (N, C, H, W)；
+TensorFlow/Keras: (N, H, W, C)。
+举例理解就是Pytorch 的卷积层和池化层的输入 shape 格式为 (N, C, H, W)，Keras 的卷积层和池化层的输入 shape 格式为 (N, H, W, C)。&lt;/p>
+&lt;p>值得注意的是 OpenCV 读取图像后返回的矩阵 shape 的格式是 （H, W, C）格式。当 OpenCV 读取的图像为彩色图像时，返回的多通道的 BGR 格式的矩阵（HWC），在内存中的存储如下图：&lt;/p></description></item><item><title>Yolov5</title><link>https://cv-cver.github.io/p/yolov5/</link><pubDate>Fri, 24 Mar 2023 23:22:04 +0800</pubDate><guid>https://cv-cver.github.io/p/yolov5/</guid><description>&lt;img src="https://cv-cver.github.io/img/3.jpg" alt="Featured image of post Yolov5" />&lt;h1 id="yolov5">YOLOv5&lt;/h1>
 &lt;h2 id="简介">简介&lt;/h2>
 &lt;p>Yolov5是一种快速、准确的目标检测算法，它将目标检测任务看作一个&lt;em>回归问题&lt;/em>。在输入图像的情况下，YOLOv5使用卷积神经网络直接预测图像中的目标的边界框和类别信息。&lt;/p>
 &lt;p>YOLOv5具有很高的检测速度和准确率，并且可以进行实时目标检测。此外，YOLOv5还支持多种检测精度和速度设置，可以根据具体应用场景选择不同的模型结构。与此同时，YOLOv5也具有很高的可定制性，可以通过在不同数据集和应用需求下进行修改和扩展，以达到更好的性能。&lt;/p>
