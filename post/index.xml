@@ -52,7 +52,34 @@
 &lt;ol>
 &lt;li>逻辑左移：无符号数使用，右移补k个0&lt;/li>
 &lt;li>算术左移：有符号数使用，右移补k个最高有效位的值（0/1）&lt;/li>
-&lt;/ol></description></item><item><title>Markdown</title><link>https://cv-cver.github.io/p/markdown/</link><pubDate>Tue, 28 Mar 2023 23:51:55 +0800</pubDate><guid>https://cv-cver.github.io/p/markdown/</guid><description>&lt;img src="https://cv-cver.github.io/img/8.jpg" alt="Featured image of post Markdown" /></description></item><item><title>Linux</title><link>https://cv-cver.github.io/p/linux/</link><pubDate>Tue, 28 Mar 2023 23:42:32 +0800</pubDate><guid>https://cv-cver.github.io/p/linux/</guid><description>&lt;img src="https://cv-cver.github.io/img/11.jpg" alt="Featured image of post Linux" />&lt;p>记录常用的Linux命令&lt;/p>
+&lt;/ol>
+&lt;h4 id="浮点数转二进制数">浮点数转二进制数&lt;/h4>
+&lt;p>浮点数在计算机中的存储方式遵循IEEE 754 浮点数计数标准，可以表示为：&lt;/p>
+&lt;p>浮点数转二进制数：&lt;/p>
+&lt;ol>
+&lt;li>符号部分（S）：0为正， 1为负&lt;/li>
+&lt;li>阶码/指数部分（E）：&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>对于float型浮点数，指数部分8位，考虑可正可负，因此可以表示的指数范围为-127 ~ 128&lt;/li>
+&lt;li>对于double型浮点数，指数部分11位，考虑可正可负，因此可以表示的指数范围为-1023 ~ 1024&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>尾数部分（M）：
+浮点数的精度是由尾数的位数来决定的：&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>对于float型浮点数，尾数部分23位，换算成十进制就是2^23=8388608，所以十进制精度只有6 ~ 7位；&lt;/li>
+&lt;li>对于double型浮点数，尾数部分52位，换算成十进制就是2^52= 4503599627370496，所以十进制精度只有15 ~ 16位&lt;/li>
+&lt;/ul>
+&lt;p>整数部分对2取余，依次记下余数，最后倒序&lt;/p>
+&lt;p>小数部分×2，依次记下整数部分&lt;/p>
+&lt;p>写成二进制科学记数法，转成二进制数&lt;/p></description></item><item><title>Markdown</title><link>https://cv-cver.github.io/p/markdown/</link><pubDate>Tue, 28 Mar 2023 23:51:55 +0800</pubDate><guid>https://cv-cver.github.io/p/markdown/</guid><description>&lt;img src="https://cv-cver.github.io/img/8.jpg" alt="Featured image of post Markdown" />&lt;h3 id="vscode-markdown-预览">vscode markdown 预览&lt;/h3>
+&lt;p>Ctrl+k 再按一下v&lt;/p>
+&lt;h3 id="有序列表">有序列表&lt;/h3>
+&lt;p>数字+.+空格&lt;/p>
+&lt;h3 id="无序列表">无序列表&lt;/h3>
+&lt;p>‘-’ + 空格&lt;/p></description></item><item><title>Linux</title><link>https://cv-cver.github.io/p/linux/</link><pubDate>Tue, 28 Mar 2023 23:42:32 +0800</pubDate><guid>https://cv-cver.github.io/p/linux/</guid><description>&lt;img src="https://cv-cver.github.io/img/11.jpg" alt="Featured image of post Linux" />&lt;p>记录常用的Linux命令&lt;/p>
 &lt;h2 id="初级常用命令">初级常用命令&lt;/h2>
 &lt;h3 id="查看和设置环境变量">查看和设置环境变量&lt;/h3>
 &lt;ol>
